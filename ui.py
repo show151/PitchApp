@@ -61,12 +61,11 @@ class MainWindow(QMainWindow):
             "レミレ": {"notes": ["レ", "ミ", "レ"], "file": "remire.wav"},
             "ミファミ": {"notes": ["ミ", "ファ", "ミ"], "file": "mifami.wav"},
             "ファソファ": {"notes": ["ファ", "ソ", "ファ"], "file": "fasofa.wav"},
-            "ソラソ": {"notes": ["ソ", "ラ", "ソ"], "file": "soraso.wav"},
+            "ソラソ": {"notes": ["ソ", "ラ", "ソ"], "file": "solaso.wav"},
             "ラシラ": {"notes": ["ラ", "シ", "ラ"], "file": "rashira.wav"},
-            "シドシ": {"notes": ["シ", "ド", "シ"], "file": "shidoshi.wav"},
-            "ドシド": {"notes": ["ド", "シ", "ド"], "file": "doshido.wav"}
+            "シドシ": {"notes": ["シ", "ド", "シ"], "file": "shidoshi.wav"}
         }
-        self.sequence_selector.addItems(self.sequences.keys())
+        self.sequence_selector.addItems(list(self.sequences.keys()))
         layout.addWidget(self.sequence_selector)
 
         # 再生ボタン
@@ -93,7 +92,7 @@ class MainWindow(QMainWindow):
 
         # 結果ラベル
         self.result_label = QLabel("結果がここに表示されます")
-        self.result_label.setAlignment(Qt.AlignCenter)
+        self.result_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.result_label.setStyleSheet("""
             QLabel {
                 background-color: white;
